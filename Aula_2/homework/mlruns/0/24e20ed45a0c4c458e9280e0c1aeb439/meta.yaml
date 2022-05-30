@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Data_Science/MLOps_Zoomcamp/MLOps-Zoomcamp/Aula_2/homework/mlruns/0/24e20ed45a0c4c458e9280e0c1aeb439/artifacts
+end_time: 1653919804965
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 24e20ed45a0c4c458e9280e0c1aeb439
+run_uuid: 24e20ed45a0c4c458e9280e0c1aeb439
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1653919773547
+status: 3
+tags: []
+user_id: Leonardo Domingos

@@ -65,10 +65,13 @@ def run(data_path, log_top):
 
     # select the model with the lowest test RMSE
     experiment = client.get_experiment_by_name(EXPERIMENT_NAME)
-    # best_run = client.search_runs( ...  )[0]
-
-    # register the best model
-    # mlflow.register_model( ... )
+    best_run = client.search_runs(
+        experiment_ids=experiment.experiment_id,
+        run_view_type=ViewType.ACTIVE_ONLY,
+        max_results=1,
+        order_by=["metrics.rmse ASC"]
+    )
+    mlflow.register_model(model_uri = f"runs:/{best_run[0].info.run_id}/model", name="best_model_nyctaxi")
 
 
 if __name__ == '__main__':
@@ -81,7 +84,7 @@ if __name__ == '__main__':
     )
     parser.add_argument(
         "--top_n",
-        default=5,
+        default=1,
         type=int,
         help="the top 'top_n' models will be evaluated to decide which model to promote."
     )
